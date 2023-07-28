@@ -1,0 +1,10 @@
+{
+	"Name": "Pizza Face Mod",
+	"ID": "PizzaFaceMod",
+	"Author": "Discard_XD",
+	"Description": "Pizza Face is approaching.",
+	"ModVersion": 1,
+	"GameVersion": 2.04,
+	"Date": "28/07/2023",
+	"Disabled": 1
+}
