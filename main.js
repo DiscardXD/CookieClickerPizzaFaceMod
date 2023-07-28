@@ -13,6 +13,17 @@ Game.registerMod("PizzaFaceMod",{
 					buff=Game.gainBuff('clot',Math.ceil(13),0.5);
 			}
 		}
+		var mod = App.mods["PizzaFaceMod"];
+		var modDir;
+		if(mod.dir.lastIndexOf('\\') == -1) {
+			modDir =  '../mods/' + (mod.local ? 'local' : 'workshop') + '/' + mod.path;
+		}
+		else {
+			modDir =  '../mods/' + mod.dir.substring(mod.dir.lastIndexOf('\\') + 1);
+		}
+		mod.context = this;
+		mod.context.scrollPos = 0; 
+		mod.context.modDirectory = modDir;
 		var divElement = document.createElement('div');
 
         divElement.className = 'pizzaface';
@@ -37,7 +48,7 @@ Game.registerMod("PizzaFaceMod",{
 
         imgElement.id = "pizzimg";
 
-        imgElement.src = 'https://media.discordapp.net/attachments/1054839079239417866/1134412317782712360/Idle.gif';
+        imgElement.src = modDir + '/Idle.gif';
 
         divElement.addEventListener('click', PizzaClick);
 
